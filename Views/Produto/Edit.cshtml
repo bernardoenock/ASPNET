@@ -1,0 +1,34 @@
+﻿@using TesteASPNET.Domain.Entities
+@model Produto
+
+@{
+    ViewBag.Title = "Editar Produto";
+}
+
+<h2>Editar Produto</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nome)
+        @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Nome)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Preco)
+        @Html.TextBoxFor(m => m.Preco, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Preco)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Estoque)
+        @Html.TextBoxFor(m => m.Estoque, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Estoque)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+}
