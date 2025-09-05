@@ -15,5 +15,6 @@ namespace TesteASPNET.Domain.Entities
 
         public DateTime? DataAtualizacao { get; set; }
         public DateTime? DataDelecao { get; set; }
+
     }
 }
